@@ -16,3 +16,7 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->post('/user', 'UserController@create');
+
+$router->post('/transaction', 'TransactionController@index');

@@ -5,6 +5,8 @@ namespace Database\Factories;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+use Faker\Factory as FakerFactory;
+
 class UserFactory extends Factory
 {
     /**
@@ -21,9 +23,12 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        $faker = FakerFactory::create('pt_BR');
+
         return [
-            'name' => $this->faker->name,
-            'email' => $this->faker->unique()->safeEmail,
+            'name' => $faker->name,
+            'email' => $faker->unique()->safeEmail,
+            'document' => $faker->cpf()
         ];
     }
 }

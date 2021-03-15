@@ -23,9 +23,9 @@ $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
 
-// $app->withFacades();
+$app->withFacades();
 
-// $app->withEloquent();
+$app->withEloquent();
 
 /*
 |--------------------------------------------------------------------------
@@ -96,6 +96,7 @@ $app->configure('app');
 // $app->register(App\Providers\EventServiceProvider::class);
 
 $app->register(\Thedevsaddam\LumenRouteList\LumenRouteListServiceProvider::class);
+$app->register(\Laravel\Tinker\TinkerServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
